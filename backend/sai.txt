@@ -1,0 +1,24 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+//MONGODB CONNECTION
+mongoose.connect('mongodb://localhost:27017/notesdb'{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+const newSchema=mongoose.Schema({
+    notes_title:String,
+    notes_description:String
+});
+
+const Notes=mongoose.model('Notes',newSchema);
