@@ -18,7 +18,7 @@ const Notes = () => {
             }
             catch(error)
             {
-              console.log("error is",error);
+              console.log("the occured error is",error);
             }
     }
     const getNotes=async()=>{
