@@ -12,7 +12,7 @@ const Notes = () => {
     const handlesubmit= async()=>{
             try{
               await axios.post('',note).then(response=>{
-                alert('successfully added!');
+                alert('successfully added! the note');
                 Setnote('');
               })
             }
@@ -21,9 +21,9 @@ const Notes = () => {
               console.log("error is",error);
             }
     }
-    const getNotes=(async)=>{
+    const getNotes=async()=>{
       try{
-        const response= await axios.get('');
+        const response= await axios.get('localhost:/3000/notes');
         Setnote(response.data);
 
       }
